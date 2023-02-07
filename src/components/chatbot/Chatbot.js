@@ -150,6 +150,7 @@ const Chatbot = (props) => {
                 options: [
                   { value: 1, label: 'Register', trigger: 'register' },
                   { value: 3, label: 'Request a Demo', trigger: 'requestademo' },
+                  { value: 5, label: 'Already a Member', trigger: 'alreadymember' },
                   { value: 4, label: 'More Information', trigger: '6' },
                   
                 ],
@@ -171,6 +172,25 @@ const Chatbot = (props) => {
                     'Our representative will get back to you in few hours.',
                   trigger: 'isthishelpful',
                 },
+                {
+                  id: 'alreadymember',
+                  message:
+                    'How can I help you?',
+                  trigger: 'lawyeroptions',
+                },
+                {
+                  id: 'lawyeroptions',
+                    options: [
+                      { value: 1, label: 'Upgrade Membership', trigger: 'upgrade' },
+                      { value: 4, label: 'Other concerns', trigger: 'requestademo' },   
+                    ],
+                  },
+                  {
+                    id: 'upgrade',
+                    message:
+                      'Our representative will get back to you in few hours. (Self service upgrade link, future iteration)',
+                    trigger: 'isthishelpful',
+                  },                
             {
               id: '6',
               message: 'Not yet configured...',
